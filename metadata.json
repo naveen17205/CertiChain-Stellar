@@ -1,0 +1,6 @@
+{
+  "name": "CertiChain",
+  "description": "A blockchain-based certificate issuance and verification platform using Stellar Soroban smart contracts and Firestore.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

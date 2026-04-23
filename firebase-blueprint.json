@@ -1,0 +1,42 @@
+{
+  "entities": {
+    "Certificate": {
+      "title": "Certificate",
+      "description": "Represents a student certificate issued by an institution.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "The unique certificate ID." },
+        "studentName": { "type": "string", "description": "Name of the student." },
+        "courseName": { "type": "string", "description": "Name of the course or degree." },
+        "issueDate": { "type": "string", "format": "date-time", "description": "When the certificate was issued." },
+        "institutionId": { "type": "string", "description": "ID of the issuing institution." },
+        "institutionName": { "type": "string", "description": "Name of the issuing institution." },
+        "stellarTxHash": { "type": "string", "description": "Transaction hash on the Stellar blockchain." },
+        "status": { "type": "string", "enum": ["issued", "revoked"], "description": "Current status of the certificate." }
+      },
+      "required": ["id", "studentName", "courseName", "issueDate", "institutionId", "institutionName", "stellarTxHash", "status"]
+    },
+    "Institution": {
+      "title": "Institution",
+      "description": "Represents an educational institution.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "The institution's unique ID (matches Auth UID)." },
+        "name": { "type": "string", "description": "Name of the institution." },
+        "email": { "type": "string", "format": "email", "description": "Contact email." },
+        "publicKey": { "type": "string", "description": "Stellar public key for the institution." }
+      },
+      "required": ["id", "name", "email"]
+    }
+  },
+  "firestore": {
+    "certificates/{certificateId}": {
+      "schema": "Certificate",
+      "description": "Collection of all issued certificates."
+    },
+    "institutions/{institutionId}": {
+      "schema": "Institution",
+      "description": "Details of registered institutions."
+    }
+  }
+}
