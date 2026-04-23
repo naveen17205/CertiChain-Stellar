@@ -119,3 +119,4 @@ This project is licensed under the Apache-2.0 License.
 
 ## 📞 Support
 For any issues, contact the system administrator or check the developer console.
+<img width="949" height="442" alt="image" src="https://github.com/user-attachments/assets/7a5c73bf-6a08-4446-aba6-36f62e93e793" />
